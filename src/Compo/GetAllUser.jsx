@@ -12,7 +12,7 @@ const GetAllUser = () => {
   useEffect(() => {
     const getAll = async () => {
       try {
-        const response = await axios.get(`${API_URL}/all`);
+        const response = await axios.get("https://hostbackend-production.up.railway.app/all");
         setData(response.data);
         console.log(response.data);
       } catch (error) {

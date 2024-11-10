@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../Confiq/Api";
 
 const CreateUser = () => {
   const [fName, setFName] = useState("");
@@ -23,10 +24,7 @@ const CreateUser = () => {
     };
 
     try {
-      const response = await axios.post(
-        "http://localhost:8080/create",
-        userdata
-      );
+      const response = await axios.post(`${API_URL}/create`, userdata);
 
       string = response.data;
     } catch (error) {

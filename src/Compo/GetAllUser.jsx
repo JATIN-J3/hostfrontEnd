@@ -2,6 +2,7 @@ import React, { Profiler, useEffect, useState } from "react";
 import UserProfile from "./UserProfile";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../Confiq/Api";
 
 const GetAllUser = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const GetAllUser = () => {
   useEffect(() => {
     const getAll = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/all");
+        const response = await axios.get(`${API_URL}/all`);
         setData(response.data);
         console.log(response.data);
       } catch (error) {

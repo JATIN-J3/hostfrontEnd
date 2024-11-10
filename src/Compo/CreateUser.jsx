@@ -24,7 +24,7 @@ const CreateUser = () => {
     };
 
     try {
-      const response = await axios.post(`${API_URL}/create`, userdata);
+      const response = await axios.post("https://hostbackend-production.up.railway.app/create", userdata);
 
       string = response.data;
     } catch (error) {
